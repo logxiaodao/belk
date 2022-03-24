@@ -1,0 +1,19 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /Volumes/data/config/elastic/logs/*.log
+      - /usr/share/filebeat/in-logs/*.log
+
+filebeat.config:
+  modules:
+    path: ${path.config}/modules.d/*.yml
+    reload.enabled: false
+
+output.logstash:
+  hosts: ["172.19.0.4:5044"]
+
+
+
+
+
